@@ -31,6 +31,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3N-3S-KS1">
+                                <rect key="frame" x="252" y="285" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,6 +46,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="inputTextField" destination="H3N-3S-KS1" id="OGY-lQ-uLj"/>
                         <outlet property="responseTextView" destination="RJk-Fo-laV" id="l5z-WM-aQg"/>
                     </connections>
                 </viewController>
