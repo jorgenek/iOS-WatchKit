@@ -65,7 +65,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         print(__FUNCTION__)
-        guard message["request"] as? String == "GetPlace" else {return}
+        
+        //guard message["request"] as? String == "GetPlace" else {return}
+        
+        let request = message["request"] as! String
+        switch request {
+        case "StopsByLocation":
+            print("Fetching stops by location")
+            testSendDataBack()
+            break
+        default:
+            print("Unknown request")
+            return
+        }
         
         let localNotification = UILocalNotification()
         localNotification.alertBody = "Message Received!"
@@ -74,6 +86,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
-
+    
+    func testSendDataBack() {
+        let message = [
+            "stops": ["Stopp 1", "Stopp 2"]
+        ]
+        
+        WCSession.defaultSession().sendMessage(
+            message, replyHandler: { (replyMessage) -> Void in
+                print("Sending data back again")
+            }) { (error) -> Void in
+                print(error)
+        }
+    }
 }
 

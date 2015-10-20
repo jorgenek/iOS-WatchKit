@@ -22,6 +22,9 @@
 		42D7CFE71BC2CCFE0054BF2F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D7CFE61BC2CCFE0054BF2F /* ExtensionDelegate.swift */; };
 		42D7CFE91BC2CCFE0054BF2F /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D7CFE81BC2CCFE0054BF2F /* GlanceController.swift */; };
 		42D7CFEB1BC2CCFE0054BF2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D7CFEA1BC2CCFE0054BF2F /* Assets.xcassets */; };
+		4BE1E5151BD698E000671812 /* MenuRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1E5141BD698E000671812 /* MenuRowController.swift */; settings = {ASSET_TAGS = (); }; };
+		4BE1E5171BD69CB500671812 /* StopsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1E5161BD69CB500671812 /* StopsInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
+		4BE1E5191BD6A67300671812 /* StopsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1E5181BD6A67300671812 /* StopsRowController.swift */; settings = {ASSET_TAGS = (); }; };
 		D669F1B999CE5E1EC558E29E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA5E2BC983438D072707787 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -105,6 +108,9 @@
 		42D7CFE81BC2CCFE0054BF2F /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		42D7CFEA1BC2CCFE0054BF2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D7CFEC1BC2CCFE0054BF2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BE1E5141BD698E000671812 /* MenuRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRowController.swift; sourceTree = "<group>"; };
+		4BE1E5161BD69CB500671812 /* StopsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsInterfaceController.swift; sourceTree = "<group>"; };
+		4BE1E5181BD6A67300671812 /* StopsRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsRowController.swift; sourceTree = "<group>"; };
 		5902C4CEF1B2B7CCF9B83100 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5C0EDC07994AE06879F1B0BB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9DA5E2BC983438D072707787 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +233,9 @@
 				42D7CFE81BC2CCFE0054BF2F /* GlanceController.swift */,
 				42D7CFEA1BC2CCFE0054BF2F /* Assets.xcassets */,
 				42D7CFEC1BC2CCFE0054BF2F /* Info.plist */,
+				4BE1E5141BD698E000671812 /* MenuRowController.swift */,
+				4BE1E5161BD69CB500671812 /* StopsInterfaceController.swift */,
+				4BE1E5181BD6A67300671812 /* StopsRowController.swift */,
 			);
 			path = "FirstWatchKitApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -508,7 +517,10 @@
 			files = (
 				42D7CFE71BC2CCFE0054BF2F /* ExtensionDelegate.swift in Sources */,
 				42D7CFE51BC2CCFE0054BF2F /* InterfaceController.swift in Sources */,
+				4BE1E5191BD6A67300671812 /* StopsRowController.swift in Sources */,
 				42D7CFE91BC2CCFE0054BF2F /* GlanceController.swift in Sources */,
+				4BE1E5151BD698E000671812 /* MenuRowController.swift in Sources */,
+				4BE1E5171BD69CB500671812 /* StopsInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,10 +11,12 @@ import WatchConnectivity
 import Foundation
 
 
-class InterfaceController: WKInterfaceController, WCSessionDelegate  {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
+
+    @IBOutlet weak var menuTable: WKInterfaceTable!
 
     @IBAction func onButtonTapped() {
-        let message = ["request": "fireLocalNotification"]
+        let message = ["request": "GetPlace"]
         WCSession.defaultSession().sendMessage(
             message, replyHandler: { (replyMessage) -> Void in
                 print("Firing message")
@@ -24,15 +26,31 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate  {
 
     }
     
+    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+        print("User selected row")
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+                
+        let menuOptions = ["I nærheten", "Diktering", "Favoritter"]
+        menuTable.setNumberOfRows(menuOptions.count, withRowType: "MenuRowIdentifier")
         
-        // Activate the session on both sides to enable communication.
-        if (WCSession.isSupported()) {
-            let session = WCSession.defaultSession()
-            session.delegate = self // conforms to WCSessionDelegate
-            session.activateSession()
+        for (index, menuOption) in menuOptions.enumerate() {
+            let row = menuTable.rowControllerAtIndex(index) as! MenuRowController
+            row.nameLabel.setText(menuOption)
         }
+    }
+    
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+
+        if (segueIdentifier == "MenuSelectionSegue") {
+            return [
+                "selection": rowIndex
+            ]
+        }
+        
+        return nil
     }
     
     override func willActivate() {

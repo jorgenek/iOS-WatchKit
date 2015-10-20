@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15B22c" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
@@ -10,15 +10,31 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FirstWatchKitApp_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Button" id="AYM-VV-fXw">
-                            <connections>
-                                <action selector="onButtonTapped" destination="AgC-eL-Hgc" id="GGG-BZ-0gZ"/>
-                            </connections>
-                        </button>
+                        <table alignment="left" id="65N-JB-oGJ">
+                            <items>
+                                <tableRow identifier="MenuRowIdentifier" id="B1u-tf-uHK" customClass="MenuRowController" customModule="FirstWatchKitApp_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Sse-Vu-O70">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="U9t-Ei-Exz"/>
+                                            <imageView width="32" height="32" alignment="right" verticalAlignment="center" image="map-marker-icon" id="fST-2E-KMG"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="RUO-rh-46J" kind="push" identifier="MenuSelectionSegue" id="avX-W5-NnM"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="U9t-Ei-Exz" id="Dki-X5-4ii"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
+                    <connections>
+                        <outlet property="menuTable" destination="65N-JB-oGJ" id="7gf-bf-paN"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="164" y="217"/>
+            <point key="canvasLocation" x="-5" y="189"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">
@@ -31,7 +47,31 @@
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="164" y="514"/>
+            <point key="canvasLocation" x="-5" y="429"/>
+        </scene>
+        <!--Stops Interface Controller-->
+        <scene sceneID="kI2-qp-Xmy">
+            <objects>
+                <controller hidesWhenLoading="NO" id="RUO-rh-46J" customClass="StopsInterfaceController" customModule="FirstWatchKitApp_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="dAE-Kp-Xk3">
+                            <items>
+                                <tableRow identifier="StopsRowIdentifier" id="RA3-G6-fE4" customClass="StopsRowController" customModule="FirstWatchKitApp_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="qvl-fB-gSi">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="TJu-x8-EyQ"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="stopsTable" destination="dAE-Kp-Xk3" id="d0W-eR-Tdy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="238" y="189"/>
         </scene>
     </scenes>
 </document>
